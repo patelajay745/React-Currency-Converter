@@ -21,7 +21,7 @@ function App() {
   };
 
   const convert = () => {
-    setConvertedAmount(amount * currencyInfo[to]);
+    setConvertedAmount((amount * currencyInfo[to]).toFixed(2));
   };
 
   return (
@@ -47,6 +47,7 @@ function App() {
                 currencyOptions={options}
                 onCurrencyChange={(currency) => {
                   setAmount(amount);
+                  setFrom(currency);
                 }}
                 selectCurrency={from}
               />
